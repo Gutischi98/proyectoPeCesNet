@@ -67,9 +67,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActualizarTicket.aspx" />
+    <Content Include="AgregarTicket.aspx" />
+    <Content Include="DetalleTicket.aspx" />
+    <Content Include="ListarTickets.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Home.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarTicket.aspx.cs">
+      <DependentUpon>ActualizarTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarTicket.aspx.designer.cs">
+      <DependentUpon>ActualizarTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarTicket.aspx.cs">
+      <DependentUpon>AgregarTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarTicket.aspx.designer.cs">
+      <DependentUpon>AgregarTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleTicket.aspx.cs">
+      <DependentUpon>DetalleTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleTicket.aspx.designer.cs">
+      <DependentUpon>DetalleTicket.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.Master.cs">
       <DependentUpon>Index.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -77,7 +103,21 @@
     <Compile Include="Index.Master.designer.cs">
       <DependentUpon>Index.Master</DependentUpon>
     </Compile>
+    <Compile Include="ListarTickets.aspx.cs">
+      <DependentUpon>ListarTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarTickets.aspx.designer.cs">
+      <DependentUpon>ListarTickets.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.Master" />
@@ -88,6 +128,15 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa-logica\Capa-logica.csproj">
+      <Project>{94f87e40-7a07-43a6-b64b-3ea45b789bcc}</Project>
+      <Name>Capa-logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

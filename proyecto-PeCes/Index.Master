@@ -1,18 +1,32 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="proyecto_PeCes.Index" %>
 
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <title>PeCe's Form</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+            <asp:Image ID="imgLogo" runat="server" ImageUrl="C:\IPLACEX\bimestre4\programacion1(segundoIntento)\proyecto-peces\proyecto-PeCes\img\logo.jpg" AlternateText="Logo" Height="163px" Width="164px" />
+            
+            
+            <asp:Menu ID="Nav" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" />
+                    <asp:MenuItem NavigateUrl="~/AgregarTicket.aspx" Text="Agregar Ticket" />
+                    <asp:MenuItem NavigateUrl="~/ListarTickets.aspx" Text="Listar todos" />
+                </Items>
+            </asp:Menu>
+            
+            
+            <asp:TextBox ID="txtSearch" runat="server" Placeholder="Buscar" Width="233px"></asp:TextBox>
+            <asp:Button ID="btnSearch" runat="server" Text="Buscar" OnClick="btnSearch_Click" Width="82px" />
+            
+            
+            <asp:ContentPlaceHolder ID="Body" runat="server">
+
             </asp:ContentPlaceHolder>
         </div>
     </form>
