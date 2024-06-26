@@ -2,6 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Body" runat="server">
 
-    <h2>Bienvenido! Ingresa un ticket de soporte para empezar!</h2>
+    <h1>Bienvenido! Ingresa un ticket de soporte para empezar!</h1>
 
 </asp:Content>
