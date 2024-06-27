@@ -9,7 +9,7 @@
     <form id="form1" runat="server">
         <div>
             
-            <asp:Image ID="imgLogo" runat="server" ImageUrl="C:\IPLACEX\bimestre4\programacion1(segundoIntento)\proyecto-peces\proyecto-PeCes\img\logo.jpg" AlternateText="Logo" Height="163px" Width="164px" />
+            <asp:Image ID="imgLogo" runat="server" ImageUrl="C:\IPLACEX\bimestre4\programacion1(segundoIntento)\proyecto-peces\proyecto-PeCes\img\\logo.jpg" AlternateText="Logo" Height="122px" Width="139px" />
             
             
             <asp:Menu ID="Nav" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false">
@@ -21,7 +21,7 @@
             </asp:Menu>
             
             
-            <asp:TextBox ID="txtSearch" runat="server" Placeholder="Buscar" Width="233px"></asp:TextBox>
+            <asp:TextBox ID="txtSearch" runat="server" Placeholder="Buscar" Width="252px"></asp:TextBox>
             <asp:Button ID="btnSearch" runat="server" Text="Buscar" OnClick="btnSearch_Click" Width="82px" />
             
             

@@ -13,5 +13,10 @@ namespace proyecto_PeCes
         {
 
         }
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text;
+            Response.Redirect("ListarTickets.aspx?searchTerm=" + searchTerm);
+        }
     }
 }
