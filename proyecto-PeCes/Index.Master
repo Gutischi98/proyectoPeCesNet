@@ -9,7 +9,7 @@
     <form id="form1" runat="server">
         <div>
             
-            <asp:Image ID="imgLogo" runat="server" ImageUrl="C:\IPLACEX\bimestre4\programacion1(segundoIntento)\proyecto-peces\proyecto-PeCes\img\\logo.jpg" AlternateText="Logo" Height="122px" Width="139px" />
+            <asp:Image ID="imgLogo" runat="server" ImageUrl="C:\IPLACEX\bimestre4\programacion1(segundoIntento)\proyecto-peces\proyecto-PeCes\img\logo.jpg" AlternateText="Logo" Height="122px" Width="139px" />
             
             
             <asp:Menu ID="Nav" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false">
