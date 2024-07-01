@@ -15,6 +15,15 @@ namespace proyecto_PeCes
     {
 
         /// <summary>
+        /// Control lblIdLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdLabel;
+
+        /// <summary>
         /// Control lblId.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,13 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.WebControls.Label lblId;
 
         /// <summary>
-        /// Control lblIdValue.
+        /// Control lblProductoLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdValue;
+        protected global::System.Web.UI.WebControls.Label lblProductoLabel;
 
         /// <summary>
         /// Control lblProducto.
@@ -42,13 +51,13 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.WebControls.Label lblProducto;
 
         /// <summary>
-        /// Control lblProductoValue.
+        /// Control lblDescripcionLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProductoValue;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionLabel;
 
         /// <summary>
         /// Control lblDescripcion.
@@ -60,13 +69,13 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.WebControls.Label lblDescripcion;
 
         /// <summary>
-        /// Control lblDescripcionValue.
+        /// Control lblEstadoLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionValue;
+        protected global::System.Web.UI.WebControls.Label lblEstadoLabel;
 
         /// <summary>
         /// Control lblEstado.
@@ -78,13 +87,13 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.WebControls.Label lblEstado;
 
         /// <summary>
-        /// Control lblEstadoValue.
+        /// Control lblClienteNombreLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstadoValue;
+        protected global::System.Web.UI.WebControls.Label lblClienteNombreLabel;
 
         /// <summary>
         /// Control lblClienteNombre.
@@ -96,13 +105,13 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.WebControls.Label lblClienteNombre;
 
         /// <summary>
-        /// Control lblClienteNombreValue.
+        /// Control lblClienteRutLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClienteNombreValue;
+        protected global::System.Web.UI.WebControls.Label lblClienteRutLabel;
 
         /// <summary>
         /// Control lblClienteRut.
@@ -114,13 +123,13 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.WebControls.Label lblClienteRut;
 
         /// <summary>
-        /// Control lblClienteRutValue.
+        /// Control lblClienteTelefonoLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClienteRutValue;
+        protected global::System.Web.UI.WebControls.Label lblClienteTelefonoLabel;
 
         /// <summary>
         /// Control lblClienteTelefono.
@@ -132,13 +141,13 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.WebControls.Label lblClienteTelefono;
 
         /// <summary>
-        /// Control lblClienteTelefonoValue.
+        /// Control lblClienteEmailLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClienteTelefonoValue;
+        protected global::System.Web.UI.WebControls.Label lblClienteEmailLabel;
 
         /// <summary>
         /// Control lblClienteEmail.
@@ -150,15 +159,6 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.WebControls.Label lblClienteEmail;
 
         /// <summary>
-        /// Control lblClienteEmailValue.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClienteEmailValue;
-
-        /// <summary>
         /// Control trRazonSocial.
         /// </summary>
         /// <remarks>
@@ -168,6 +168,15 @@ namespace proyecto_PeCes
         protected global::System.Web.UI.HtmlControls.HtmlTableRow trRazonSocial;
 
         /// <summary>
+        /// Control lblClienteRazonSocialLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblClienteRazonSocialLabel;
+
+        /// <summary>
         /// Control lblClienteRazonSocial.
         /// </summary>
         /// <remarks>
@@ -175,15 +184,6 @@ namespace proyecto_PeCes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblClienteRazonSocial;
-
-        /// <summary>
-        /// Control lblClienteRazonSocialValue.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClienteRazonSocialValue;
 
         /// <summary>
         /// Control btnVolver.

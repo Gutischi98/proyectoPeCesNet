@@ -21,9 +21,7 @@
         <tr>
             <td><asp:Label ID="lblEstado" runat="server" Text="Estado:"></asp:Label></td>
             <td><asp:Label ID="lblEstadoValue" runat="server"></asp:Label></td>
-        </tr>
-
-        
+        </tr>    
         <tr>
             <td><asp:Label ID="lblClienteNombre" runat="server" Text="Nombre Cliente:"></asp:Label></td>
             <td><asp:Label ID="lblClienteNombreValue" runat="server"></asp:Label></td>
