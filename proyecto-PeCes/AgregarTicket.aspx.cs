@@ -20,53 +20,69 @@ namespace proyecto_PeCes
 
         protected void ddlTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            trRazonSocial.Visible = ddlTipoCliente.SelectedValue == "2";
+            if (ddlTipoCliente.SelectedValue == "Empresa")
+            {
+                trRazonSocial.Visible = true;
+            }
+            else
+            {
+                trRazonSocial.Visible = false;
+            }
         }
 
         protected void btnAgregarTicket_Click(object sender, EventArgs e)
         {
-            Cliente cliente;
-            if (ddlTipoCliente.SelectedValue == "2")
+            if (Page.IsValid)
             {
-                cliente = new Empresa
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Nombre = txtNombre.Text,
-                    Rut = txtRut.Text,
-                    Telefono = txtTelefono.Text,
-                    Email = txtEmail.Text,
-                    RazonSocial = txtRazonSocial.Text
-                };
-            }
-            else
-            {
-                cliente = new PersonaNatural
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Nombre = txtNombre.Text,
-                    Rut = txtRut.Text,
-                    Telefono = txtTelefono.Text,
-                    Email = txtEmail.Text
-                };
-            }
+                string nombre = txtNombre.Text;
+                string rut = txtRut.Text;
+                string telefono = txtTelefono.Text;
+                string email = txtEmail.Text;
+                string tipoCliente = ddlTipoCliente.SelectedValue;
+                string razonSocial = txtRazonSocial.Text;
+                string producto = txtProducto.Text;
+                string descripcion = txtDescripcion.Text;
 
-            var ticket = new Ticket
-            {
-                Id = Guid.NewGuid().ToString(),
-                Cliente = cliente,
-                Producto = txtProducto.Text,
-                Descripcion = txtDescripcion.Text,
-                Estado = txtEstado.Text
-            };
+                Cliente cliente;
+                if (tipoCliente == "Empresa")
+                {
+                    cliente = new Empresa
+                    {
+                        Nombre = nombre,
+                        Rut = rut,
+                        Telefono = telefono,
+                        Email = email,
+                        RazonSocial = razonSocial
+                    };
+                }
+                else
+                {
+                    cliente = new PersonaNatural
+                    {
+                        Nombre = nombre,
+                        Rut = rut,
+                        Telefono = telefono,
+                        Email = email
+                    };
+                }
 
-            string resultado = TicketController.Create(ticket);
-            if (resultado.Contains("Éxito"))
-            {
-                Response.Redirect("ListarTickets.aspx?mensaje=El ticket fue agregado con éxito");
-            }
-            else
-            {
-                Response.Redirect("ListarTickets.aspx?mensaje=El ticket no pudo ser agregado");
+                Ticket ticket = new Ticket
+                {
+                    Cliente = cliente,
+                    Producto = producto,
+                    Descripcion = descripcion,
+                    Estado = "Pendiente"
+                };
+
+                string resultado = TicketController.Create(ticket);
+                if (resultado == "Éxito")
+                {
+                    Response.Redirect("ListarTickets.aspx?mensaje=El ticket fue agregado con éxito");
+                }
+                else
+                {
+                    Response.Write("El ticket no pudo ser agregado");
+                }
             }
         }
     }
