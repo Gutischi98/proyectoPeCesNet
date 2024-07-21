@@ -48,6 +48,7 @@ namespace proyecto_PeCes
                 {
                     cliente = new Empresa
                     {
+                        Id = Guid.NewGuid().ToString(),
                         Nombre = nombre,
                         Rut = rut,
                         Telefono = telefono,
@@ -59,6 +60,7 @@ namespace proyecto_PeCes
                 {
                     cliente = new PersonaNatural
                     {
+                        Id = Guid.NewGuid().ToString(),
                         Nombre = nombre,
                         Rut = rut,
                         Telefono = telefono,
