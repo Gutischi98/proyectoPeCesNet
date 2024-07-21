@@ -44,6 +44,6 @@
             <td><asp:Label ID="lblClienteRazonSocialValue" runat="server"></asp:Label></td>
         </tr>
     </table>
-    <asp:Button ID="btnActualizarTicket" runat="server" Text="Actualizar Ticket" OnClick="btnActualizarTicket_Click" />s
+    <asp:Button ID="btnActualizarTicket" runat="server" Text="Actualizar Ticket" OnClick="btnActualizarTicket_Click" />
 
 </asp:Content>
