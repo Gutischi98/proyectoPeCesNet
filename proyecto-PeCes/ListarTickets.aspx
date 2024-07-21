@@ -6,7 +6,7 @@
     <h2>Listar Tickets</h2>
     <asp:GridView ID="gvTickets" runat="server" AutoGenerateColumns="False" OnRowCommand="gvTickets_RowCommand">
         <Columns>
-            <asp:BoundField DataField="Id" HeaderText="ID" Visible="true" />
+            <asp:BoundField DataField="Id" HeaderText="ID" Visible="True" />
             <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre Cliente" />
             <asp:BoundField DataField="Producto" HeaderText="Producto" />
             <asp:ButtonField Text="Ver detalle" CommandName="VerDetalle" />

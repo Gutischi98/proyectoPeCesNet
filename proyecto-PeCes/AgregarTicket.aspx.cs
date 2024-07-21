@@ -30,60 +30,91 @@ namespace proyecto_PeCes
             }
         }
 
-        protected void btnAgregarTicket_Click(object sender, EventArgs e)
+        protected void ValidateClienteNombre(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length >= 5)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+        }
+
+        protected void ValidateProducto(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length >= 10)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+        }
+
+        protected void ValidateDescripcion(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length >= 10)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+        }
+
+        protected void btnCrearTicket_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
-                string nombre = txtNombre.Text;
-                string rut = txtRut.Text;
-                string telefono = txtTelefono.Text;
-                string email = txtEmail.Text;
-                string tipoCliente = ddlTipoCliente.SelectedValue;
-                string razonSocial = txtRazonSocial.Text;
-                string producto = txtProducto.Text;
-                string descripcion = txtDescripcion.Text;
-
                 Cliente cliente;
-                if (tipoCliente == "Empresa")
+                string clienteId = Guid.NewGuid().ToString(); 
+
+                if (ddlTipoCliente.SelectedValue == "Empresa")
                 {
                     cliente = new Empresa
                     {
-                        Id = Guid.NewGuid().ToString(),
-                        Nombre = nombre,
-                        Rut = rut,
-                        Telefono = telefono,
-                        Email = email,
-                        RazonSocial = razonSocial
+                        Id = clienteId,
+                        Nombre = txtClienteNombre.Text,
+                        Rut = txtClienteRut.Text,
+                        Telefono = txtClienteTelefono.Text,
+                        Email = txtClienteEmail.Text,
+                        RazonSocial = txtClienteRazonSocial.Text
                     };
                 }
                 else
                 {
                     cliente = new PersonaNatural
                     {
-                        Id = Guid.NewGuid().ToString(),
-                        Nombre = nombre,
-                        Rut = rut,
-                        Telefono = telefono,
-                        Email = email
+                        Id = clienteId,
+                        Nombre = txtClienteNombre.Text,
+                        Rut = txtClienteRut.Text,
+                        Telefono = txtClienteTelefono.Text,
+                        Email = txtClienteEmail.Text
                     };
                 }
 
-                Ticket ticket = new Ticket
+                Ticket nuevoTicket = new Ticket
                 {
+                    Id = Guid.NewGuid().ToString(), 
                     Cliente = cliente,
-                    Producto = producto,
-                    Descripcion = descripcion,
-                    Estado = "Pendiente"
+                    Producto = txtProducto.Text,
+                    Descripcion = txtDescripcion.Text,
+                    Estado = txtEstado.Text
                 };
 
-                string resultado = TicketController.Create(ticket);
-                if (resultado == "Éxito")
+                string resultado = TicketController.Create(nuevoTicket);
+
+                if (resultado.Contains("Éxito"))
                 {
                     Response.Redirect("ListarTickets.aspx?mensaje=El ticket fue agregado con éxito");
                 }
                 else
                 {
-                    Response.Write("El ticket no pudo ser agregado");
+                    Response.Redirect("ListarTickets.aspx?mensaje=El ticket no pudo ser agregado");
                 }
             }
         }

@@ -1,75 +1,97 @@
 ﻿<%@ Page Title="Agregar Ticket" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" CodeBehind="AgregarTicket.aspx.cs" Inherits="proyecto_PeCes.AgregarTicket" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Body" runat="server">
-    <h2>Crear Ticket de Soporte</h2>
+     <h2>Agregar Ticket de Soporte</h2>
     <table>
-
+        <!-- Datos del Cliente -->
         <tr>
-            <td><asp:Label ID="lblNombre" runat="server" Text="Nombre Cliente:"></asp:Label></td>
+            <td><asp:Label ID="lblClienteNombreLabel" runat="server" Text="Nombre:"></asp:Label></td>
             <td>
-                <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="El nombre es obligatorio." ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="El nombre debe tener al menos 5 caracteres." ValidationExpression=".{5,}" ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RegularExpressionValidator>
+                <asp:TextBox ID="txtClienteNombre" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvClienteNombre" runat="server" ControlToValidate="txtClienteNombre"
+                    ErrorMessage="El nombre es obligatorio." ValidationGroup="vgCrearTicket"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ID="cvClienteNombre" runat="server" ControlToValidate="txtClienteNombre"
+                    ErrorMessage="El nombre debe tener al menos 5 caracteres." ValidationGroup="vgCrearTicket"
+                    OnServerValidate="ValidateClienteNombre"></asp:CustomValidator>
             </td>
         </tr>
         <tr>
-            <td><asp:Label ID="lblRut" runat="server" Text="RUT Cliente:"></asp:Label></td>
+            <td><asp:Label ID="lblClienteRutLabel" runat="server" Text="RUT:"></asp:Label></td>
             <td>
-                <asp:TextBox ID="txtRut" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvRut" runat="server" ControlToValidate="txtRut" ErrorMessage="El RUT es obligatorio." ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="revRut" runat="server" ControlToValidate="txtRut" ErrorMessage="El formato del RUT no es válido." ValidationExpression="^(\d{8,9}-[\dkK])$" ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RegularExpressionValidator>
+                <asp:TextBox ID="txtClienteRut" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvClienteRut" runat="server" ControlToValidate="txtClienteRut"
+                    ErrorMessage="El RUT es obligatorio." ValidationGroup="vgCrearTicket"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revClienteRut" runat="server" ControlToValidate="txtClienteRut"
+                    ErrorMessage="Formato de RUT inválido." ValidationGroup="vgCrearTicket"
+                    ValidationExpression="^(\d{8,9}-[\dkK])$"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
-            <td><asp:Label ID="lblTelefono" runat="server" Text="Teléfono Cliente:"></asp:Label></td>
+            <td><asp:Label ID="lblClienteTelefonoLabel" runat="server" Text="Teléfono:"></asp:Label></td>
             <td>
-                <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="El teléfono es obligatorio." ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="txtClienteTelefono" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvClienteTelefono" runat="server" ControlToValidate="txtClienteTelefono"
+                    ErrorMessage="El teléfono es obligatorio." ValidationGroup="vgCrearTicket"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td><asp:Label ID="lblEmail" runat="server" Text="Email Cliente:"></asp:Label></td>
+            <td><asp:Label ID="lblClienteEmailLabel" runat="server" Text="Email:"></asp:Label></td>
             <td>
-                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="El email es obligatorio." ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="El formato del email no es válido." ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RegularExpressionValidator>
+                <asp:TextBox ID="txtClienteEmail" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvClienteEmail" runat="server" ControlToValidate="txtClienteEmail"
+                    ErrorMessage="El email es obligatorio." ValidationGroup="vgCrearTicket"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revClienteEmail" runat="server" ControlToValidate="txtClienteEmail"
+                    ErrorMessage="Formato de email inválido." ValidationGroup="vgCrearTicket"
+                    ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
-            <td><asp:Label ID="lblTipoCliente" runat="server" Text="Tipo de Cliente:"></asp:Label></td>
+            <td><asp:Label ID="lblClienteTipoLabel" runat="server" Text="Tipo de Cliente:"></asp:Label></td>
             <td>
-                <asp:DropDownList ID="ddlTipoCliente" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTipoCliente_SelectedIndexChanged">
-                    <asp:ListItem Text="Seleccionar" Value="" />
-                    <asp:ListItem Text="Persona Natural" Value="PersonaNatural" />
-                    <asp:ListItem Text="Empresa" Value="Empresa" />
+                <asp:DropDownList ID="ddlTipoCliente" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoCliente_SelectedIndexChanged">
+                    <asp:ListItem Value="Seleccionar" Text="Seleccionar" Disabled="true" Selected="true"></asp:ListItem>
+                    <asp:ListItem Value="PersonaNatural" Text="Persona Natural"></asp:ListItem>
+                    <asp:ListItem Value="Empresa" Text="Empresa"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="rfvTipoCliente" runat="server" ControlToValidate="ddlTipoCliente" InitialValue="" ErrorMessage="Debe seleccionar un tipo de cliente." ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvTipoCliente" runat="server" ControlToValidate="ddlTipoCliente"
+                    InitialValue="Seleccionar" ErrorMessage="Debe seleccionar un tipo de cliente." ValidationGroup="vgCrearTicket"></asp:RequiredFieldValidator>
             </td>
         </tr>
+        <!-- Campos adicionales para Empresa -->
         <tr id="trRazonSocial" runat="server" visible="false">
-            <td><asp:Label ID="lblRazonSocial" runat="server" Text="Razón Social Cliente:"></asp:Label></td>
+            <td><asp:Label ID="lblClienteRazonSocialLabel" runat="server" Text="Razón Social:"></asp:Label></td>
             <td>
-                <asp:TextBox ID="txtRazonSocial" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtClienteRazonSocial" runat="server"></asp:TextBox>
             </td>
         </tr>
 
-
+        <!-- Datos del Ticket -->
         <tr>
-            <td><asp:Label ID="lblProducto" runat="server" Text="Nombre del Producto:"></asp:Label></td>
+            <td><asp:Label ID="lblProductoLabel" runat="server" Text="Producto:"></asp:Label></td>
             <td>
                 <asp:TextBox ID="txtProducto" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvProducto" runat="server" ControlToValidate="txtProducto" ErrorMessage="El nombre del producto es obligatorio." ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="revProducto" runat="server" ControlToValidate="txtProducto" ErrorMessage="El nombre del producto debe tener al menos 10 caracteres." ValidationExpression=".{10,}" ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="rfvProducto" runat="server" ControlToValidate="txtProducto"
+                    ErrorMessage="El producto es obligatorio." ValidationGroup="vgCrearTicket"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ID="cvProducto" runat="server" ControlToValidate="txtProducto"
+                    ErrorMessage="El producto debe tener al menos 10 caracteres." ValidationGroup="vgCrearTicket"
+                    OnServerValidate="ValidateProducto"></asp:CustomValidator>
             </td>
         </tr>
         <tr>
-            <td><asp:Label ID="lblDescripcion" runat="server" Text="Descripción del Producto:"></asp:Label></td>
+            <td><asp:Label ID="lblDescripcionLabel" runat="server" Text="Descripción:"></asp:Label></td>
             <td>
                 <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="La descripción del producto es obligatoria." ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="revDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="La descripción del producto debe tener al menos 10 caracteres." ValidationExpression=".{10,}" ValidationGroup="vgCrearTicket" Display="Dynamic"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion"
+                    ErrorMessage="La descripción es obligatoria." ValidationGroup="vgCrearTicket"></asp:RequiredFieldValidator>
+                <asp:CustomValidator ID="cvDescripcion" runat="server" ControlToValidate="txtDescripcion"
+                    ErrorMessage="La descripción debe tener al menos 10 caracteres." ValidationGroup="vgCrearTicket"
+                    OnServerValidate="ValidateDescripcion"></asp:CustomValidator>
             </td>
         </tr>
+        <tr>
+            <td><asp:Label ID="lblEstado" runat="server" Text="Estado:"></asp:Label></td>
+            <td><asp:TextBox ID="txtEstado" runat="server"></asp:TextBox></td>
+        </tr>
     </table>
-    <asp:Button ID="btnAgregarTicket" runat="server" Text="Agregar Ticket" OnClick="btnAgregarTicket_Click" ValidationGroup="vgCrearTicket" />
+    <asp:Button ID="btnCrearTicket" runat="server" Text="Crear Ticket" OnClick="btnCrearTicket_Click" ValidationGroup="vgCrearTicket" />
 </asp:Content>
