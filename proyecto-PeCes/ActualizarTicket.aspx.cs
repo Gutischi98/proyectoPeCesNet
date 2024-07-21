@@ -56,20 +56,23 @@ namespace proyecto_PeCes
 
         protected void btnActualizarTicket_Click(object sender, EventArgs e)
         {
-            string ticketId = Request.QueryString["id"];
-            string telefono = txtClienteTelefono.Text;
-            string email = txtClienteEmail.Text;
-            string producto = txtProducto.Text;
-            string descripcion = txtDescripcion.Text;
+            if (Page.IsValid)
+            {
+                string ticketId = Request.QueryString["id"];
+                string telefono = txtClienteTelefono.Text;
+                string email = txtClienteEmail.Text;
+                string producto = txtProducto.Text;
+                string descripcion = txtDescripcion.Text;
 
-            string resultado = TicketController.Update(ticketId, producto, descripcion, null, email, telefono);
-            if (resultado.Contains("Éxito"))
-            {
-                Response.Redirect("ListarTickets.aspx?mensaje=El ticket fue actualizado con éxito");
-            }
-            else
-            {
-                Response.Redirect("ListarTickets.aspx?mensaje=El ticket no pudo ser actualizado");
+                string resultado = TicketController.Update(ticketId, producto, descripcion, null, email, telefono);
+                if (resultado.Contains("Éxito"))
+                {
+                    Response.Redirect("ListarTickets.aspx?mensaje=El ticket fue actualizado con éxito");
+                }
+                else
+                {
+                    Response.Redirect("ListarTickets.aspx?mensaje=El ticket no pudo ser actualizado");
+                }
             }
         }
     }
