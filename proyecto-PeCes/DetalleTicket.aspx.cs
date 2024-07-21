@@ -52,5 +52,14 @@ namespace proyecto_PeCes
                 trRazonSocial.Visible = false;
             }
         }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            string ticketId = lblId.Text;
+            if (!string.IsNullOrEmpty(ticketId))
+            {
+                Response.Redirect($"ActualizarTicket.aspx?id={ticketId}");
+            }
+        }
     }
 }

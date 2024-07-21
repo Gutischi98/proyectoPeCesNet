@@ -44,6 +44,6 @@
         </tr>
     </table>
     <asp:Button ID="btnVolver" runat="server" Text="Volver" PostBackUrl="~/ListarTickets.aspx" />
-    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" PostBackUrl='<%# "ActualizarTicket.aspx?id=" + Eval("Id") %>' />
+     <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
 
 </asp:Content>
