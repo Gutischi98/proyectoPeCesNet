@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Body" runat="server">
      <h2>Agregar Ticket de Soporte</h2>
     <table>
-        <!-- Datos del Cliente -->
         <tr>
             <td><asp:Label ID="lblClienteNombreLabel" runat="server" Text="Nombre:"></asp:Label></td>
             <td>
@@ -57,7 +56,6 @@
                     InitialValue="Seleccionar" ErrorMessage="Debe seleccionar un tipo de cliente." ValidationGroup="vgCrearTicket"></asp:RequiredFieldValidator>
             </td>
         </tr>
-        <!-- Campos adicionales para Empresa -->
         <tr id="trRazonSocial" runat="server" visible="false">
             <td><asp:Label ID="lblClienteRazonSocialLabel" runat="server" Text="Razón Social:"></asp:Label></td>
             <td>
@@ -65,7 +63,6 @@
             </td>
         </tr>
 
-        <!-- Datos del Ticket -->
         <tr>
             <td><asp:Label ID="lblProductoLabel" runat="server" Text="Producto:"></asp:Label></td>
             <td>
